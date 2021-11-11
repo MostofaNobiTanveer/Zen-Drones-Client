@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import AdminRoute from "../Login/AdminRoute/AdminRoute";
+import { AdminRoute } from "../AdminRoute/AdminRoute";
 import DashboardHome from "./DashboardHome";
 import MakeAdmin from "./MakeAdmin";
 import ManageOrders from "./ManageOrders";

@@ -8,27 +8,22 @@ const MakeAdmin = () => {
   const [roleUpdate, setRoleUpdate] = useState(false);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const user = { email };
     setLoading(true);
-    e.preventDefault();
-    try {
-      fetch("https://intense-fortress-85211.herokuapp.com/users/admin", {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(user),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setRoleUpdate(!roleUpdate);
-        });
-    } catch (error) {
-      // Error
-    } finally {
-      setLoading(false);
-      setEmail("");
-    }
+    fetch("https://intense-fortress-85211.herokuapp.com/users/admin", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setRoleUpdate(!roleUpdate);
+        setEmail("");
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -120,7 +115,7 @@ const MakeAdmin = () => {
                   <div className="space-y-20">
                     <div className="space-y-2 border-l-4 border-indigo-400 rounded -ml-4">
                       <div className="truncate font-medium pl-2 text-xs">
-                        <h3 className="truncate">{displayName}</h3>
+                        <h3 className="truncate capitalize">{displayName}</h3>
                         <p className="text-gray-400 truncate">{email}</p>
                       </div>
                     </div>

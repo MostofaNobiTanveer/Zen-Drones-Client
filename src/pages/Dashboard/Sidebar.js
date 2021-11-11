@@ -269,7 +269,7 @@ const Sidebar = ({ children }) => {
             <div className="flex-1 flex">
               <h1 className="flex flex-col text-xs text-gray-500 font-bold">
                 Wellcome,{" "}
-                <span className="text-blue-500 text-lg font-medium capitalize">
+                <span className="text-blue-500 truncate text-base sm:text-lg font-medium capitalize">
                   {user.displayName}
                 </span>
               </h1>
@@ -285,13 +285,13 @@ const Sidebar = ({ children }) => {
                   >
                     {user.photoURL ? (
                       <img
-                        className="h-8 w-8 sm:w-9 sm:h-9 rounded-full"
+                        className="w-9 h-9 rounded-full"
                         src={user.photoURL}
                         alt={user.displayName.split(" ").slice(-1).join(" ")}
                       />
                     ) : (
                       <svg
-                        className="h-8 w-8 sm:w-9 sm:h-9 bg-gradient-to-br from-indigo-500 to-green-300 rounded-full overflow-hidden"
+                        className="w-9 h-9 bg-gradient-to-br from-indigo-500 to-green-300 rounded-full overflow-hidden"
                         fill="white"
                         viewBox="0 0 24 24"
                       >
@@ -343,15 +343,15 @@ const Sidebar = ({ children }) => {
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            class="h-6 w-6"
+                            className="h-6 w-6"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
                           >
                             <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="1"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="1"
                               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                             />
                           </svg>
