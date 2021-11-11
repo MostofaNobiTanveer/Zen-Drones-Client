@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     setLoading(true);
     e.preventDefault();
     try {
-      fetch("http://localhost:4000/users/admin", {
+      fetch("https://intense-fortress-85211.herokuapp.com/users/admin", {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -33,7 +33,7 @@ const MakeAdmin = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:4000/users")
+    fetch("https://intense-fortress-85211.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);

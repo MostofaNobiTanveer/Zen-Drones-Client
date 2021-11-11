@@ -111,7 +111,7 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/users/${user.email}`)
+    fetch(`https://intense-fortress-85211.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -132,7 +132,7 @@ const useFirebase = () => {
 
   const saveUsersToDb = (email, displayName, photoURL, method) => {
     const user = { email, displayName, photoURL };
-    fetch("http://localhost:4000/users", {
+    fetch("https://intense-fortress-85211.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
