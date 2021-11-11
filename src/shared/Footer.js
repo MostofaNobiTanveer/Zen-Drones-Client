@@ -41,7 +41,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-indigo-300 to-purple-400 rounded-t-3xl">
+    <footer className="bg-gradient-to-br from-indigo-300 to-purple-400">
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-8 lg:py-12 lg:px-8">
         <div className="grid lg:grid-cols-2 lg:gap-8">
           <div className="space-y-6">

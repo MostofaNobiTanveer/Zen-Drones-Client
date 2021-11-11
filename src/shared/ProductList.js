@@ -46,7 +46,7 @@ const ProductList = ({ cardCount }) => {
           </p>
         </div> */}
 
-      <div className="flex-1 overflow-hidden sm:divide-y-0 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 sm:gap-px">
+      <div className="flex-1 overflow-hidden sm:divide-y-0 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
         {drones.slice(0, cardCount).map((drone) => (
           <ProductCard key={drone.id} {...drone} />
         ))}
