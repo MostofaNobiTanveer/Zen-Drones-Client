@@ -8,7 +8,7 @@ const Cart = () => {
     <>
       <ScrollToTop />
       <Navbar />
-      <section className="bg-gradient-to-br from-blue-400 to-red-200 pt-20 min-h-screen">
+      <section className="pt-20 min-h-screen">
         <Navbar />
         <div class="">
           <div class="py-12">

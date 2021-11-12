@@ -18,6 +18,7 @@ initializeFirebase();
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [adminLoading, setAdminLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
 
@@ -111,9 +112,13 @@ const useFirebase = () => {
   }, [auth]);
 
   useEffect(() => {
+    setAdminLoading(true);
     fetch(`https://intense-fortress-85211.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
+      .then((data) => {
+        setAdmin(data.admin);
+        setAdminLoading(false);
+      });
   }, [user.email]);
 
   const userSignOut = () => {
@@ -144,6 +149,7 @@ const useFirebase = () => {
   return {
     user,
     admin,
+    adminLoading,
     isLoading,
     authError,
     signUpUser,

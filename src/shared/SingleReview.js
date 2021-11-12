@@ -6,7 +6,7 @@ const SingleReview = () => {
   const { user } = useAuthContext();
   return (
     <div class="flex items-center justify-center pt-5 pb-10">
-      <div class="w-full mx-auto max-w-xl rounded-lg bg-gradient-to-br from-purple-400 to-indigo-400 shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
+      <div class="w-full mx-auto rounded-lg bg-gradient-to-br from-purple-400 to-indigo-400 shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
         <div class="w-full pt-1 text-center pb-2 -mt-16 mx-auto">
           <img
             alt="profil"

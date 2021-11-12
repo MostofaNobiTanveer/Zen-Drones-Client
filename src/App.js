@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Cart from "./pages/Cart/Cart";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Drones from "./pages/Drones/Drones";
 import Home from "./pages/Home/Home";
@@ -23,7 +24,7 @@ function App() {
       />
       <Route path="explore-drones" element={<Drones />} />
       <Route path="reviews" element={<Reviews />} />
-      {/* <Route path="cart" element={<Cart />} /> */}
+      <Route path="cart" element={<Cart />} />
       <Route path="signin" element={<Signin />} />
       <Route path="signup" element={<Signup />} />
     </Routes>

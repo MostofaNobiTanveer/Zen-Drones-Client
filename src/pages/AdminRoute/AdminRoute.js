@@ -4,10 +4,10 @@ import { useAuthContext } from "../../contexts/AuthProvider";
 import Loading from "../../shared/Loading";
 
 export const AdminRoute = ({ children }) => {
-  const { user, admin, isLoading } = useAuthContext();
+  const { user, admin, adminLoading } = useAuthContext();
   const location = useLocation();
 
-  if (isLoading) {
+  if (adminLoading) {
     return <Loading />;
   }
 
