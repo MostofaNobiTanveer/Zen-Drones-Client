@@ -141,7 +141,7 @@ const Cart = () => {
                           <img
                             src="https://i.imgur.com/xbTAITF.jpg"
                             width="60"
-                            class="rounded-full "
+                            class="rounded-full"
                           />
                           <div class="flex flex-col ml-3 ">
                             {" "}

@@ -7,6 +7,7 @@ import ScrollToTop from "../../utilities/ScrollToTop";
 import Banner from "./Banner";
 import CTA from "./CTA";
 import Features from "./Features";
+import ReviewCTA from "./ReviewCTA";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <ProductList cardCount={Infinity} />
       <CTA />
       <ReviewList reviewCount={2} />
+      <ReviewCTA />
       <Footer />
     </>
   );
