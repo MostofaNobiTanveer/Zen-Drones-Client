@@ -4,7 +4,7 @@ import Navbar from "../../shared/Navbar";
 import ProductList from "../../shared/ProductList";
 import ScrollToTop from "../../utilities/ScrollToTop";
 import Banner from "./Banner";
-import FeatureProducts from "./FeatureProducts";
+import CTA from "./CTA";
 import Features from "./Features";
 import Testimonials from "./Testimonials";
 
@@ -15,9 +15,9 @@ const Home = () => {
       <Navbar />
       <Banner />
       <Features />
-      {/* <FeatureProducts /> */}
       <ProductList cardCount={Infinity} />
-      {/* <Testimonials /> */}
+      <CTA />
+      <Testimonials />
       <Footer />
     </>
   );

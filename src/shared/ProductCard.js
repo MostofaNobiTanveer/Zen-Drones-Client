@@ -20,13 +20,13 @@ const ProductCard = ({ id, name, img, price }) => {
       <div className="flex flex-col h-full">
         <div className="block mx-auto h-64 w-64 overflow-hidden">
           <img
-            className="w-full h-full object-cover object-center"
+            className="product_img w-full h-full object-cover object-center"
             src={img}
             alt={name}
           />
         </div>
         <div className="truncate mt-6 text-center lg:text-left">
-          <p className="text-xl text-black font-medium">{name}</p>
+          <p className="text-2xl text-black font-medium font-title tracking-wider">{name}</p>
           <p className="mt-2 text-xl font-semibold text-indigo-600">${price}</p>
         </div>
       </div>
