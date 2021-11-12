@@ -6,7 +6,7 @@ const Rating = ({ value, text }) => {
         {value >= index + 1 ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 inline text-yellow-500"
+            className="h-5 w-5 inline text-white"
             fill="currentColor"
             viewBox="0 0 32 32"
             stroke="currentColor"
@@ -21,7 +21,7 @@ const Rating = ({ value, text }) => {
         ) : value >= index + 0.5 ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 inline text-yellow-500"
+            className="h-5 w-5 inline text-white"
             fill="currentColor"
             viewBox="0 0 32 32"
             stroke="currentColor"
@@ -36,7 +36,7 @@ const Rating = ({ value, text }) => {
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 inline text-yellow-500"
+            className="h-5 w-5 inline text-white"
             fill="currentColor"
             viewBox="0 0 32 32"
             stroke="currentColor"

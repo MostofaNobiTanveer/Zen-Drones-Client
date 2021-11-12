@@ -109,15 +109,15 @@ const Footer = () => {
                     to="/explore-drones"
                     className="text-base text-gray-200 hover:text-white"
                   >
-                    Explore
+                    Drones
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/cart"
+                    to="/reviews"
                     className="text-base text-gray-200 hover:text-white"
                   >
-                    Cart
+                    Reviews
                   </Link>
                 </li>
               </ul>
@@ -141,7 +141,7 @@ const Footer = () => {
                     to="/explore-drones"
                     className="text-base text-gray-200 hover:text-white"
                   >
-                    Drones
+                    Products
                   </Link>
                 </li>
                 <li>
