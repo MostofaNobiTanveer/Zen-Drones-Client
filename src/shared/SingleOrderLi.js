@@ -1,18 +1,29 @@
 import React from "react";
 
 const SingleOrderLi = ({ order, handleOrderDelete }) => {
-  const { _id, status, name, email, address } = order;
+  const { _id, status, name, email, address, orders } = order;
   return (
     <li className="bg-white">
       <div className="px-4 py-4 sm:px-6 hover:bg-bgBlack">
         <div className="flex items-center justify-between">
-          {/* recipient */}
-          <div>
+
+          <div className="flex gap-3 items-center">
             <div className="flex flex-col gap-0.5 text-sm">
               <p className="text-smalt-500 font-medium">{name}</p>
               <p className="text-xs text-gray-600">{email}</p>
               <p className="text-xs text-smalt-800 font-medium">{address}</p>
             </div>
+            {orders.map((o) => {
+              return (
+                <div className="flex flex-col gap-0.5 text-sm p-2 bg-gray-50 rounded-md">
+                  <p className="text-smalt-500 font-medium">{o.name}</p>
+                  <p className="text-xs text-gray-800">Total: {o.totalPrice}</p>
+                  <p className="text-xs text-smalt-800 font-medium">
+                    Quantity: {o.quantity}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
           {/* action button */}
@@ -39,7 +50,7 @@ const SingleOrderLi = ({ order, handleOrderDelete }) => {
               </button>
             </div>
             <div>
-              <span className="uppercase inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-smalt-500 text-white">
+              <span className="uppercase bg-gray-100 inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-smalt-500 text-black">
                 {status}
               </span>
             </div>
