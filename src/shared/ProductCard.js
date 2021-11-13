@@ -1,32 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ id, name, img, price }) => {
-  const handleMouseMove = (e) => {
-    const x = e.pageX - e.target.offsetLeft;
-    const y = e.pageY - e.target.offsetTop;
-
-    e.target.style.setProperty("--x", x + "px");
-    e.target.style.setProperty("--y", y + "px");
-  };
-
+const ProductCard = ({ _id, name, image, price }) => {
   return (
     <Link
-      to={`drone/${id}`}
-      onMouseMove={(e) => handleMouseMove(e)}
+      to={`/drones/${_id}`}
       title={name}
-      className="product_card overflow-hidden relative p-6 group focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
+      className="product_card overflow-hidden relative p-4 group focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500"
     >
       <div className="flex flex-col h-full">
-        <div className="block mx-auto h-64 w-64 overflow-hidden">
+        <div className="block mx-auto h-52 w-52 overflow-hidden">
           <img
             className="product_img w-full h-full object-cover object-center"
-            src={img}
+            src={image}
             alt={name}
           />
         </div>
         <div className="truncate mt-6 text-center lg:text-left">
-          <p className="text-2xl text-black font-medium font-title tracking-wider">{name}</p>
+          <p className="text-2xl text-black font-medium font-title tracking-wider">
+            {name}
+          </p>
           <p className="mt-2 text-xl font-semibold text-indigo-600">${price}</p>
         </div>
       </div>

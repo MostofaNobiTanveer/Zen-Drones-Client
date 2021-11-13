@@ -17,7 +17,7 @@ const links = [
     svgPath: [
       "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z",
     ],
-    href: "/explore-drones",
+    href: "/drones",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const Navbar = () => {
   const { user, userSignOut } = useAuthContext();
 
   return (
-    <nav className="bg-purple-300 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 fixed w-full top-0 z-40">
+    <nav className="bg-indigo-300 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 fixed w-full top-0 z-40">
       <div className="max-w-6xl mx-auto px-2 sm:px-6">
         <div className="relative flex items-center justify-between h-16">
           {/* <!-- Mobile menu button--> */}
@@ -51,15 +51,15 @@ const Navbar = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
+                className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
                 />
               </svg>
@@ -132,7 +132,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-white transform transition-all px-2 py-2 rounded-md text-base font-semibold"
-                        : "text-gray-200 transform transition-all hover:text-white px-3 py-2 rounded-md text-base font-semibold"
+                        : "text-gray-100 transform transition-all hover:text-white px-3 py-2 rounded-md text-base font-semibold"
                     }
                   >
                     {text}
@@ -211,15 +211,15 @@ const Navbar = () => {
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="h-6 w-6"
+                          className="h-6 w-6"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="1"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="1"
                             d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                           />
                         </svg>

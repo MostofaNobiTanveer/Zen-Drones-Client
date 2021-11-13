@@ -7,6 +7,7 @@ import Signin from "./pages/Login/Signin/SIgnin";
 import Signup from "./pages/Login/Signup/Signup";
 import NotFound from "./pages/NotFound/NotFound";
 import PrivateRoute from "./pages/PrivateRoute/PrivateRoute";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Reviews from "./pages/Reviews/Reviews";
 
 function App() {
@@ -22,7 +23,9 @@ function App() {
           </PrivateRoute>
         }
       />
-      <Route path="explore-drones" element={<Drones />} />
+      <Route path="drones" element={<Drones />}>
+      </Route>
+        <Route path="/drones/:id" element={<ProductDetails />} />
       <Route path="reviews" element={<Reviews />} />
       <Route path="cart" element={<Cart />} />
       <Route path="signin" element={<Signin />} />

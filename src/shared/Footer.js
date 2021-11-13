@@ -106,7 +106,7 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    to="/explore-drones"
+                    to="/drones"
                     className="text-base text-gray-200 hover:text-white"
                   >
                     Drones
@@ -138,7 +138,7 @@ const Footer = () => {
 
                 <li>
                   <Link
-                    to="/explore-drones"
+                    to="/drones"
                     className="text-base text-gray-200 hover:text-white"
                   >
                     Products

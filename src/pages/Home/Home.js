@@ -6,7 +6,6 @@ import ReviewList from "../../shared/ReviewList";
 import ScrollToTop from "../../utilities/ScrollToTop";
 import Banner from "./Banner";
 import CTA from "./CTA";
-import Features from "./Features";
 import ReviewCTA from "./ReviewCTA";
 
 const Home = () => {
@@ -15,8 +14,7 @@ const Home = () => {
       <ScrollToTop />
       <Navbar />
       <Banner />
-      <Features />
-      <ProductList cardCount={Infinity} />
+      <ProductList productCount={6} />
       <CTA />
       <ReviewList reviewCount={2} />
       <ReviewCTA />

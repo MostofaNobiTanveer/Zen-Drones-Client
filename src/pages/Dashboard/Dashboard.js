@@ -5,11 +5,12 @@ import DashboardHome from "./DashboardHome";
 import MakeAdmin from "./MakeAdmin";
 import ManageOrders from "./ManageOrders";
 import { Payment } from "./Payment";
-import Products from "./Products";
+import AddProducts from "./AddProducts";
 import Review from "./Review";
 import Sidebar from "./Sidebar";
 import UserOrders from "./UserOrders";
 import UserProfile from "./UserProfile";
+import Products from "./Products";
 
 const Dashboard = () => {
   return (
@@ -20,6 +21,14 @@ const Dashboard = () => {
           <Route path="profile" element={<UserProfile />} />
           <Route path="orders" element={<UserOrders />} />
           <Route path="review" element={<Review />} />
+          <Route
+            path="add-products"
+            element={
+              <AdminRoute>
+                <AddProducts />
+              </AdminRoute>
+            }
+          />
           <Route
             path="products"
             element={

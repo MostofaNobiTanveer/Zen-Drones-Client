@@ -17,7 +17,7 @@ const Banner = () => {
 
   return (
     <section className="overflow-hidden bg-gradient-to-br from-blue-400 to-red-200">
-      <div class="relative max-w-6xl mx-auto pt-52">
+      <div className="relative max-w-6xl mx-auto pt-52">
         <div className="transform translate-y-6 inline-block pt-20 sm:pt-10 font-title sm:tracking-wide uppercase font-extrabold text-gray-100 text-8xl sm:text-9xl">
           <h1>
             Drones <br /> with <br /> personality

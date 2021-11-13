@@ -5,13 +5,19 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AuthProvider from "./contexts/AuthProvider";
+import AppProvider from "./contexts/AppProvider";
+import ProductProvider from "./contexts/ProductProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <AppProvider>
+        <ProductProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ProductProvider>
+      </AppProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")

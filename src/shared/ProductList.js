@@ -1,40 +1,14 @@
 import React from "react";
+import { useProductContext } from "../contexts/ProductProvider";
+import Loading from "./Loading";
 import ProductCard from "./ProductCard";
 
-const drones = [
-  {
-    id: 1,
-    name: "DJI Air 2S",
-    price: 999,
-    img: "https://i.ibb.co/nmG2TGQ/DJI-Air-2-S-2.png",
-  },
-  {
-    id: 2,
-    name: "DJI Air 2S",
-    price: 999,
-    img: "https://i.ibb.co/nmG2TGQ/DJI-Air-2-S-2.png",
-  },
-  {
-    id: 3,
-    name: "DJI Air 2S",
-    price: 999,
-    img: "https://i.ibb.co/nmG2TGQ/DJI-Air-2-S-2.png",
-  },
-  {
-    id: 4,
-    name: "DJI Air 2S",
-    price: 999,
-    img: "https://i.ibb.co/nmG2TGQ/DJI-Air-2-S-2.png",
-  },
-  {
-    id: 5,
-    name: "DJI Air 2S",
-    price: 999,
-    img: "https://i.ibb.co/nmG2TGQ/DJI-Air-2-S-2.png",
-  },
-];
+const ProductList = ({ productCount }) => {
+  const { loading, products } = useProductContext();
 
-const ProductList = ({ cardCount }) => {
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <section>
       {/* <div className="text-center bg-gray-50 mx-auto px-4 sm:px-6 py-10">
@@ -47,9 +21,13 @@ const ProductList = ({ cardCount }) => {
         </div> */}
 
       <div className="flex-1 overflow-hidden sm:divide-y-0 grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-        {drones.slice(0, cardCount).map((drone) => (
-          <ProductCard key={drone.id} {...drone} />
-        ))}
+        {products
+          .slice()
+          .reverse()
+          .slice(0, productCount)
+          .map((drone) => (
+            <ProductCard key={drone._id} {...drone} />
+          ))}
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ const NotFound = () => {
             Discover the world's top <br /> drones and grab them.
           </h1>
           <Link
-            to="explore-drones"
+            to="drones"
             className="text-blue-600 mt-6 font-medium text-lg tracking-wide underline pl-4"
           >
             Explore Drones

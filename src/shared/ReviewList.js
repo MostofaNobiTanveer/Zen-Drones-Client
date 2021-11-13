@@ -1,15 +1,25 @@
 import React from "react";
+import { useAppContext } from "../contexts/AppProvider";
+import Loading from "./Loading";
 import SingleReview from "./SingleReview";
-const reviews = [1, 2, 3, 4];
 
 const ReviewList = ({ reviewCount }) => {
+  const { reviews, loading } = useAppContext();
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <section>
-      <div class="px-3 container pt-20 mx-auto">
-        <div class="grid lg:grid-cols-2 gap-4 max-w-6xl mx-auto">
-          {reviews.slice(0, reviewCount).map((review, index) => (
-            <SingleReview key={index} {...review} />
-          ))}
+      <div className="px-3 container pt-20 mx-auto">
+        <div className="grid lg:grid-cols-2 gap-4 max-w-6xl mx-auto">
+          {reviews
+            .slice()
+            .reverse()
+            .slice(0, reviewCount)
+            .map((review, index) => (
+              <SingleReview key={index} {...review} />
+            ))}
         </div>
       </div>
     </section>
