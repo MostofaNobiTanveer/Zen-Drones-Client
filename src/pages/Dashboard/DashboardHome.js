@@ -11,13 +11,16 @@ const DashboardHome = () => {
       {/* <div className="border-4 border-dashed border-gray-200 rounded-lg h-96"></div> */}
       <div className="max-w-3xl">
         <div className="grid sm:grid-cols-2 gap-3">
-          <Link to="/drones" className="relative flex flex-col gap-3 items-center sm:items-start shadow-lg p-4 bg-white rounded-xl">
+          <Link
+            to="/drones"
+            className="relative flex flex-col gap-3 items-center sm:items-start shadow-lg p-4 bg-white rounded-xl"
+          >
             <div className="h-16 w-16">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-full w-full"
                 viewBox="0 0 19 17"
-                stroke-width="1"
+                strokeWidth="1"
                 version="1.1"
               >
                 <g style={{ fill: "#2329D6" }}>
@@ -55,9 +58,9 @@ const DashboardHome = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 stroke="#2329D6"
-                stroke-width="1.5"
-                stroke-linecap="square"
-                stroke-linejoin="miter"
+                strokeWidth="1.5"
+                strokeLinecap="square"
+                strokeLinejoin="miter"
                 fill="none"
                 color="#2329D6"
               >

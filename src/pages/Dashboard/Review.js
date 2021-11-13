@@ -59,7 +59,8 @@ const Review = () => {
                 <input
                   type="text"
                   required
-                  defaultValue={user.displayName}
+                  disabled
+                  value={user.displayName}
                   name="name"
                   id="name"
                   autoComplete="given-name"
@@ -78,7 +79,8 @@ const Review = () => {
                   type="email"
                   required
                   name="email"
-                  defaultValue={user.email}
+                  disabled
+                  value={user.email}
                   id="email"
                   autoComplete="email"
                   className="bg-white mt-1 text-smalt-900 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"

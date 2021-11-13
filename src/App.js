@@ -23,9 +23,8 @@ function App() {
           </PrivateRoute>
         }
       />
-      <Route path="drones" element={<Drones />}>
-      </Route>
-        <Route path="/drones/:id" element={<ProductDetails />} />
+      <Route path="drones" element={<Drones />}></Route>
+      <Route path="/drones/:id" element={<ProductDetails />} />
       <Route path="reviews" element={<Reviews />} />
       <Route path="cart" element={<Cart />} />
       <Route path="signin" element={<Signin />} />

@@ -39,7 +39,7 @@ const Navbar = () => {
   const { user, userSignOut } = useAuthContext();
 
   return (
-    <nav className="bg-indigo-300 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 fixed w-full top-0 z-40">
+    <nav className="bg-indigo-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-30 fixed w-full top-0 z-30">
       <div className="max-w-6xl mx-auto px-2 sm:px-6">
         <div className="relative flex items-center justify-between h-16">
           {/* <!-- Mobile menu button--> */}

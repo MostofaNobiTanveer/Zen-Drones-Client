@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useCartContext } from "../../contexts/CartProvider";
 import Footer from "../../shared/Footer";
 import Loading from "../../shared/Loading";
 import Navbar from "../../shared/Navbar";
 import ScrollToTop from "../../utilities/ScrollToTop";
 
 const ProductDetails = () => {
+  const { handleAddToCart } = useCartContext();
+  const navigate = useNavigate();
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [product, setProduct] = useState({});
@@ -20,10 +23,27 @@ const ProductDetails = () => {
       });
   }, [id]);
 
+  useEffect(() => {
+    let list = localStorage.getItem("cart_list");
+    if (list) {
+      const listItems = JSON.parse(localStorage.getItem("cart_list"));
+      const exist = listItems.find((item) => item?._id === product?._id);
+      if (exist) {
+        product.quantity = exist.quantity + 1;
+        product.totalPrice = exist.totalPrice + parseInt(product.price)
+      }
+    } else {
+      return;
+    }
+  }, [product]);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <ScrollToTop />
-      {loading && <Loading />}
       <Navbar />
       {/* content */}
       <section className="overflow-hidden bg-gradient-to-br from-blue-400 to-red-200">
@@ -73,7 +93,9 @@ const ProductDetails = () => {
                 </dd>
               </div>
               <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-md font-medium text-gray-500">Flight time</dt>
+                <dt className="text-md font-medium text-gray-500">
+                  Flight time
+                </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   {product.flightTime} minutes
                 </dd>
@@ -87,7 +109,9 @@ const ProductDetails = () => {
                 </dd>
               </div>
               <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt className="text-md font-medium text-gray-500">Little About</dt>
+                <dt className="text-md font-medium text-gray-500">
+                  Little About
+                </dt>
                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                   {product.description}
                 </dd>
@@ -102,7 +126,7 @@ const ProductDetails = () => {
               </div>
               <div className="bg-white px-4 py-5 sm:grid sm:px-6 flex">
                 <button
-                  type="submit"
+                  onClick={() => handleAddToCart(product, navigate)}
                   className="inline-flex w-full md:w-max justify-center items-center px-20 py-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <svg

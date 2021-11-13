@@ -7,18 +7,24 @@ import reportWebVitals from "./reportWebVitals";
 import AuthProvider from "./contexts/AuthProvider";
 import AppProvider from "./contexts/AppProvider";
 import ProductProvider from "./contexts/ProductProvider";
+import CartProvider from "./contexts/CartProvider";
+import OrderProvider from "./contexts/OrderProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <AppProvider>
-        <ProductProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </ProductProvider>
-      </AppProvider>
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <AppProvider>
+          <OrderProvider>
+            <ProductProvider>
+              <CartProvider>
+                <App />
+              </CartProvider>
+            </ProductProvider>
+          </OrderProvider>
+        </AppProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

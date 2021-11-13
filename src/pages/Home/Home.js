@@ -14,7 +14,7 @@ const Home = () => {
       <ScrollToTop />
       <Navbar />
       <Banner />
-      <ProductList productCount={8} />
+      <ProductList productCount={6} />
       <CTA />
       <ReviewList reviewCount={2} />
       <ReviewCTA />
