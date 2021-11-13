@@ -124,7 +124,7 @@ const Footer = () => {
             </div>
             <div className="lg:justify-self-end lg:mr-10">
               <h3 className="text-sm font-semibold text-white tracking-wider uppercase">
-                Explore
+                Quick Links
               </h3>
               <ul className="mt-4 space-y-4">
                 <li>

@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# ZEN Drones
+### https://zen-drones.web.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is [Zen drones](https://zen-drones.web.app/), one of the best and authentic drone seller. Our drones encompass superior quality, innovation, and utility.
 
-## Available Scripts
+### Our Adjectives
 
-In the project directory, you can run:
+* Established to produce innovative products safely and responsibly.
+* We take care of order fulfillment, transport, quality and delivery of your dream drones.
+* Our drones encompass superior quality, innovation, and utility.
+* From aerial photography and videography to inspection solutions and more, we have drones that are optimal for every application.
+* Satisfaction is our moto & we love tech!
 
-### `yarn start`
+# Application Summery
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Tags
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`React` `Tailwind-CSS` `React-router` `Private Route` `Firebase` `Authentication` `MongoDb` `Express` `Heroku` `REST API`
 
-### `yarn test`
+### Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* In this application we have different `routes` to explore
+* You need to access application `dashboard`
+* We used `Firebase authentication` service
+* you can explore `drones` and `drone details page`
+* you can give us `review` from dashboard
+* you can  `place orders`
+* you can `manage your orders`
+* if you are `admin`, you can `make others admin`
+* Admin can `add & delete products`
+* your review and product will `dynamically update on web page`
 
-### `yarn build`
+### App folder structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+─src
+    ├───components
+    │       AllParcelList.js
+    │       EmptyParcelList.js
+    │       Features.js
+    │       Footer.js
+    │       Hero.js
+    │       LilBanner.js
+    │       Loading.js
+    │       Navbar.js
+    │       ParcelDetailsPopup.js
+    │       Services.js
+    │       Signin.js
+    │       SingleParcelList.js
+    ├───contexts
+    │       AppProvider.js 
+    │       AuthProvider.js 
+    │       ProductProvider.js 
+    ├───firebase
+    │       firebase.config.js
+    │       firebase.init.js
+    ├───hooks
+    │       useFirebase.js
+    ├───pages
+    │   │   About.js
+    │   │   Coverage.js
+    │   │   CreateParcel.js
+    │   │   Home.js
+    │   │   MyParcel.js
+    │   │   NOtFound.js
+    │   │   Parcels.js
+    │   │   PrivateRoute.js
+    │   │   Terms.js
+    └───utils
+            ScrollTotop.js
+            data.js
+            subTotal.js
+```

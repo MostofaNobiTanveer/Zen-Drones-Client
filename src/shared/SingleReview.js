@@ -4,7 +4,7 @@ import Rating from "../utilities/Rating";
 const SingleReview = ({ name, email, review, rating, photoURL }) => {
   return (
     <div className="flex items-center justify-center pt-5 pb-10">
-      <div className="w-full mx-auto rounded-lg bg-gradient-to-br from-purple-400 to-indigo-400 shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
+      <div className="w-full mx-auto rounded-lg bg-white shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
         <div className="w-full pt-1 text-center pb-2 -mt-16 mx-auto">
           {photoURL ? (
             <img
@@ -26,19 +26,19 @@ const SingleReview = ({ name, email, review, rating, photoURL }) => {
           </p>
         </div>
         <div className="w-full mb-8">
-          <div className="text-6xl text-indigo-100 text-left leading-tight h-8">
+          <div className="text-6xl text-indigo-500 text-left leading-tight h-8">
             “
           </div>
-          <p className="text-base text-purple-50 dark:text-gray-100 text-center px-5">
+          <p className="text-base text-gray-900 text-center px-5">
             {review}
           </p>
-          <div className="text-6xl text-indigo-100 text-right leading-tight h-8 -mt-3">
+          <div className="text-6xl text-indigo-500 text-right leading-tight h-8 -mt-3">
             ”
           </div>
         </div>
         <div className="w-full">
-          <p className="text-md text-white font-bold text-center">{name}</p>
-          <p className="text-xs text-indigo-100 dark:text-gray-300 text-center">
+          <p className="text-lg text-gray-700 font-medium text-center">{name}</p>
+          <p className="text-xs text-gray-400 dark:text-gray-300 text-center">
             {email}
           </p>
         </div>
