@@ -28,6 +28,29 @@ const OrderProvider = ({ children }) => {
       });
   };
 
+  const handleOrderDelete = (id) => {
+      const confirmation = window.confirm("Are you sure you want to delete?");
+      if (confirmation) {
+        setLoading(true);
+        fetch(
+          `https://intense-fortress-85211.herokuapp.com/deleteOrder/${id}`,
+          {
+            method: "DELETE",
+            headers: { "content-type": "application/json" },
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              setControl(!control);
+              setLoading(false);
+            } else {
+              setControl(false);
+            }
+          });
+      } else return;
+  }
+
   useEffect(() => {
     setLoading(true);
     fetch(`https://intense-fortress-85211.herokuapp.com/orders/${user?.email}`)
@@ -49,7 +72,7 @@ const OrderProvider = ({ children }) => {
   }, [control]);
 
   return (
-    <OrderContext.Provider value={{ orders, myOrders, loading, addOrdersToDb }}>
+    <OrderContext.Provider value={{ orders,handleOrderDelete, myOrders, loading, addOrdersToDb }}>
       {children}
     </OrderContext.Provider>
   );

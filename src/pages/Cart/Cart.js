@@ -12,7 +12,7 @@ const Cart = () => {
   const { cartList, handleRemoveFromcart } = useCartContext();
   const { user, isLoading } = useAuthContext();
   const { addOrdersToDb } = useOrderContext();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     address: "",
     phone: "",
@@ -24,9 +24,10 @@ const Cart = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const finalData = { ...formData, orders: cartList };
+    const finalData = { ...formData, status: "pending", orders: cartList };
     addOrdersToDb(finalData, navigate);
     setFormData({
       address: "",
