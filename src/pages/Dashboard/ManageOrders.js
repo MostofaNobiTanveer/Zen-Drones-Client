@@ -5,7 +5,7 @@ import Loading from "../../shared/Loading";
 import SingleOrderLi from "../../shared/SingleOrderLi";
 
 const ManageOrders = () => {
-  const { loading, orders, handleOrderDelete } = useOrderContext();
+  const { loading, orders } = useOrderContext();
   if (loading) {
     return <Loading />;
   }
@@ -43,14 +43,8 @@ const ManageOrders = () => {
             </Link>
           ) : (
             <ul className="divide-y bg-smalt-50 divide-smalt-200 rounded-md overflow-hidden">
-              {orders.map((order) => {
-                return (
-                  <SingleOrderLi
-                    handleOrderDelete={handleOrderDelete}
-                    key={order._id}
-                    order={order}
-                  />
-                );
+              {orders.slice().reverse().map((order) => {
+                return <SingleOrderLi key={order._id} order={order} />;
               })}
             </ul>
           )}

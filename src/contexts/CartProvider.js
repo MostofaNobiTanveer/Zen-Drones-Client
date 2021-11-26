@@ -33,6 +33,10 @@ const CartProvider = ({ children }) => {
     navigate("/cart");
   };
 
+  const emptyCart = () => {
+    setCartList([]);
+  };
+
   const handleRemoveFromcart = (id) => {
     const items = JSON.parse(localStorage.getItem("cart_list"));
     const filteredItem = items.filter((item) => item._id !== id);
@@ -47,7 +51,7 @@ const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cartList, handleAddToCart, handleRemoveFromcart }}
+      value={{ cartList, handleAddToCart, emptyCart, handleRemoveFromcart }}
     >
       {children}
     </CartContext.Provider>

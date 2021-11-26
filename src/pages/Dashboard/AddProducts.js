@@ -199,7 +199,7 @@ const Products = () => {
                   onChange={(e) => handleOnChange(e)}
                   id="description"
                   rows="5"
-                  placeholder="Your opinion about us"
+                  placeholder="Product description"
                 ></textarea>
               </div>
             </div>

@@ -1,16 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useOrderContext } from "../../contexts/OrderProvider";
-import Loading from "../../shared/Loading";
 import SingleOrderLi from "../../shared/SingleOrderLi";
 import ScrollToTop from "../../utilities/ScrollToTop";
 
 const UserOrders = () => {
-  const { myOrders, loading, handleOrderDelete } = useOrderContext();
-
-  if (loading) {
-    return <Loading />;
-  }
+  const { myOrders } = useOrderContext();
 
   return (
     <div className="py-6">
@@ -47,14 +42,8 @@ const UserOrders = () => {
             </Link>
           ) : (
             <ul className="divide-y bg-smalt-50 divide-smalt-200 rounded-md overflow-hidden">
-              {myOrders.map((order) => {
-                return (
-                  <SingleOrderLi
-                    handleOrderDelete={handleOrderDelete}
-                    key={order._id}
-                    order={order}
-                  />
-                );
+              {myOrders.slice().reverse().map((order) => {
+                return <SingleOrderLi key={order._id} order={order} />;
               })}
             </ul>
           )}

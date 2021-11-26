@@ -9,7 +9,7 @@ import Navbar from "../../shared/Navbar";
 import ScrollToTop from "../../utilities/ScrollToTop";
 
 const Cart = () => {
-  const { cartList, handleRemoveFromcart } = useCartContext();
+  const { cartList, handleRemoveFromcart, emptyCart } = useCartContext();
   const { user, isLoading } = useAuthContext();
   const { addOrdersToDb } = useOrderContext();
   const navigate = useNavigate();
@@ -29,6 +29,7 @@ const Cart = () => {
     e.preventDefault();
     const finalData = { ...formData, status: "pending", orders: cartList };
     addOrdersToDb(finalData, navigate);
+    emptyCart();
     setFormData({
       address: "",
       phone: "",
@@ -45,7 +46,7 @@ const Cart = () => {
       <ScrollToTop />
       <Navbar />
       <section className="pt-32 pb-20 px-3">
-        <div className="max-w-xl mx-auto bg-gray-50 shadow-lg rounded-lg md:max-w-5xl">
+        <div className="max-w-xl mx-auto bg-gray-50 rounded-lg md:max-w-5xl">
           {cartList.length < 1 ? (
             <Link
               to="/drones"

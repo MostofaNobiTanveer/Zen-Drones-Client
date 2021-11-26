@@ -21,35 +21,46 @@ const OrderProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        navigate("/dashboard/orders");
         localStorage.removeItem("cart_list");
         setControl(!control);
         setLoading(false);
-        navigate("/dashboard/orders");
+      });
+  };
+
+  const handleOrderStatus = (id, orderStatus) => {
+    setLoading(true);
+    fetch(`https://intense-fortress-85211.herokuapp.com/updateOrder/${id}`, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(orderStatus),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        setControl(!control);
       });
   };
 
   const handleOrderDelete = (id) => {
-      const confirmation = window.confirm("Are you sure you want to delete?");
-      if (confirmation) {
-        setLoading(true);
-        fetch(
-          `https://intense-fortress-85211.herokuapp.com/deleteOrder/${id}`,
-          {
-            method: "DELETE",
-            headers: { "content-type": "application/json" },
+    const confirmation = window.confirm("Are you sure you want to delete?");
+    if (confirmation) {
+      setLoading(true);
+      fetch(`https://intense-fortress-85211.herokuapp.com/deleteOrder/${id}`, {
+        method: "DELETE",
+        headers: { "content-type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            setControl(!control);
+            setLoading(false);
+          } else {
+            setControl(false);
           }
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              setControl(!control);
-              setLoading(false);
-            } else {
-              setControl(false);
-            }
-          });
-      } else return;
-  }
+        });
+    } else return;
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -59,7 +70,7 @@ const OrderProvider = ({ children }) => {
         setMyOrders(data);
         setLoading(false);
       });
-  }, [user.email, control, orders]);
+  }, [user.email, orders]);
 
   useEffect(() => {
     setLoading(true);
@@ -72,7 +83,16 @@ const OrderProvider = ({ children }) => {
   }, [control]);
 
   return (
-    <OrderContext.Provider value={{ orders,handleOrderDelete, myOrders, loading, addOrdersToDb }}>
+    <OrderContext.Provider
+      value={{
+        orders,
+        handleOrderDelete,
+        handleOrderStatus,
+        myOrders,
+        loading,
+        addOrdersToDb,
+      }}
+    >
       {children}
     </OrderContext.Provider>
   );
