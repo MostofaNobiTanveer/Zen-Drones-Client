@@ -4,7 +4,7 @@ const AppContext = createContext(null);
 
 const AppProvider = ({ children }) => {
   const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [reviewUpdate, setReviewUpdate] = useState(false);
 
   const addReviewToDb = (formDaata) => {
